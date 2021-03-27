@@ -1,7 +1,10 @@
 from flask import Flask, request, render_template, json, redirect, url_for, session, abort, Markup
 from engine import SpamDetector
+from flask_ngrok import run_with_ngrok # Only needed in Colab
+
 app = Flask(__name__)
 app.secret_key = 'F12Zr47j\3yX R~X@H!jmM]Lwf/,?KT'
+run_with_ngrok(app)
 
 # Defining the basic route and its corresponding request handler
 @app.route("/")
